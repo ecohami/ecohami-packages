@@ -1,9 +1,16 @@
 {
   "name": "@ecohami/react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "source": "src/index.ts",
-  "main": "dist/main.js",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecohami/ecohami-packages.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
