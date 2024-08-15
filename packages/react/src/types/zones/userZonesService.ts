@@ -47,6 +47,10 @@ export type UserZonesResponse = {
 export type CreateUserZoneFormValues = {
   name: string
   location: string
+  wifiSsid: string
+  wifiPassword: string
+  mqttUrl: string
+  mqttPort: number
 }
 
 // Params
@@ -58,6 +62,10 @@ export interface CreateUserZoneParams {
 export type CreateUserZoneInput = {
   name: string
   location: string
+  wifiSsid: string
+  wifiPassword: string
+  mqttUrl: string
+  mqttPort: number
 }
 
 // Response
@@ -74,6 +82,10 @@ export type CreateUserZoneResponse = {
 export type UpdateUserZoneFormValues = {
   name: string
   location: string
+  wifiSsid: string
+  wifiPassword: string
+  mqttUrl: string
+  mqttPort: number
 }
 
 // Params
@@ -86,6 +98,10 @@ export type UpdateUserZoneInput = {
   id: string
   name?: string
   location?: string
+  wifiSsid?: string
+  wifiPassword?: string
+  mqttUrl?: string
+  mqttPort?: number
 }
 
 // Response

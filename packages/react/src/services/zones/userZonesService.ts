@@ -29,6 +29,10 @@ const createUserZonesService = (config: GraphQLConfig) => {
           location
           createdAt
           updatedAt
+          wifiSsid
+          wifiPassword
+          mqttUrl
+          mqttPort
         }
       }
     `
@@ -38,9 +42,7 @@ const createUserZonesService = (config: GraphQLConfig) => {
     }
 
     const graphQLClient = await getGraphQLClient(config)
-    console.log('xo1')
     const data: UserZoneResponse = await graphQLClient.request(query, variables)
-    console.log('xo2')
     return data.userZone
   }
 
