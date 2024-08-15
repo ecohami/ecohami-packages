@@ -2,4 +2,10 @@
 
 ## Publish
 
-Go https://github.com/settings/tokens
+```bash
+export GITHUB_TOKEN=JustChangeMe
+```
+
+```bash
+pnpm publish --access public
+```
