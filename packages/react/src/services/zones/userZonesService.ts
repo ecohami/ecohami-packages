@@ -3,9 +3,15 @@ import { gql } from 'graphql-request'
 
 // Local
 import {
+  CreateUserZoneParams,
+  CreateUserZoneResponse,
+  DeleteUserZoneParams,
+  DeleteUserZoneResponse,
   GetUserZoneParams,
   GetUserZonesParams,
   GraphQLConfig,
+  UpdateUserZoneParams,
+  UpdateUserZoneResponse,
   UserZoneResponse,
   UserZonesResponse,
   Zone,
@@ -71,9 +77,81 @@ const createUserZonesService = (config: GraphQLConfig) => {
     return data.userZones
   }
 
+  const createUserZone = async ({
+    input,
+  }: CreateUserZoneParams): Promise<Zone> => {
+    const query = gql`
+      mutation createUserZone($input: CreateUserZoneInput!) {
+        createUserZone(input: $input) {
+          id
+        }
+      }
+    `
+
+    const variables = {
+      input,
+    }
+
+    const graphQLClient = await getGraphQLClient(config)
+    const data: CreateUserZoneResponse = await graphQLClient.request(
+      query,
+      variables,
+    )
+    return data.createZone
+  }
+
+  const updateUserZone = async ({
+    input,
+  }: UpdateUserZoneParams): Promise<Zone> => {
+    const query = gql`
+      mutation updateUserZone($input: UpdateUserZoneInput!) {
+        updateUserZone(input: $input) {
+          id
+        }
+      }
+    `
+
+    const variables = {
+      input,
+    }
+
+    const graphQLClient = await getGraphQLClient(config)
+    const data: UpdateUserZoneResponse = await graphQLClient.request(
+      query,
+      variables,
+    )
+    return data.updateZone
+  }
+
+  const deleteUserZone = async ({
+    id,
+  }: DeleteUserZoneParams): Promise<Zone> => {
+    const query = gql`
+      mutation deleteUserZone($id: String!) {
+        deleteUserZone(id: $id) {
+          id
+        }
+      }
+    `
+
+    const variables = {
+      id,
+    }
+
+    const graphQLClient = await getGraphQLClient(config)
+    const data: DeleteUserZoneResponse = await graphQLClient.request(
+      query,
+      variables,
+    )
+    return data.deleteZone
+  }
+
   return {
     getUserZone,
     getUserZones,
+    createUserZone,
+    updateUserZone,
+    deleteUserZone,
   }
 }
 

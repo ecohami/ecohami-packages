@@ -1,7 +1,7 @@
 // Local
 import { PaginationOffsetArgs } from '../pagination'
 import { Device, DeviceConnection } from './device'
-import { DevicesFilter } from './devicesApi'
+import { DevicesFilter } from './devicesService'
 
 export interface UserDevicesService {
   getUserDevice(params: GetUserDeviceParams): Promise<Device>

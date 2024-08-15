@@ -1,3 +1,3 @@
-export * from './userZoneApis'
+export * from './userZonesService'
 export * from './zone'
-export * from './zonesApi'
+export * from './zonesService'

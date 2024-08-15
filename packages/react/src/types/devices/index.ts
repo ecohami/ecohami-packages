@@ -1,3 +1,3 @@
 export * from './device'
-export * from './devicesApi'
-export * from './userDevicesApi'
+export * from './devicesService'
+export * from './userDevicesService'

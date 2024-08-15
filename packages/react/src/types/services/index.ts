@@ -1,2 +1,2 @@
 export * from './service'
-export * from './servicesApi'
+export * from './servicesService'
