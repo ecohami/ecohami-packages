@@ -1,5 +1,5 @@
 // Local
-import {
+import type {
   Device,
   DeviceConnection,
   DevicesCursorConnection,
@@ -81,7 +81,6 @@ export type DevicesCursorResponse = {
 export type CreateDeviceFormValues = {
   name: string
   deviceId: string
-  macAddress: string
 }
 
 // Params
@@ -93,7 +92,6 @@ export interface CreateDeviceParams {
 export type CreateDeviceInput = {
   name: string
   deviceId: string
-  macAddress: string
   serviceIds: string[]
 }
 
@@ -111,7 +109,6 @@ export type CreateDeviceResponse = {
 export type UpdateDeviceFormValues = {
   name: string
   deviceId: string
-  macAddress: string
 }
 
 // Params
@@ -124,7 +121,6 @@ export type UpdateDeviceInput = {
   id: string
   name?: string
   deviceId?: string
-  macAddress?: string
 }
 
 // Response

@@ -1,29 +1,29 @@
 // External
 import { gql } from 'graphql-request'
 
+import { getGraphQLClient } from '../../lib/graphqlClient'
 // Local
 import {
-  CreateDeviceParams,
-  CreateDeviceResponse,
+  type CreateDeviceParams,
+  type CreateDeviceResponse,
   CursorDirection,
-  DeleteDeviceParams,
-  DeleteDeviceResponse,
-  Device,
-  DeviceConnection,
-  DeviceCursorQuery,
-  DeviceResponse,
-  DevicesCursorConnection,
-  DevicesCursorResponse,
-  DevicesResponse,
-  DevicesService,
-  GetDeviceParams,
-  GetDevicesCursorParams,
-  GetDevicesParams,
-  GraphQLConfig,
-  UpdateDeviceParams,
-  UpdateDeviceResponse,
+  type DeleteDeviceParams,
+  type DeleteDeviceResponse,
+  type Device,
+  type DeviceConnection,
+  type DeviceCursorQuery,
+  type DeviceResponse,
+  type DevicesCursorConnection,
+  type DevicesCursorResponse,
+  type DevicesResponse,
+  type DevicesService,
+  type GetDeviceParams,
+  type GetDevicesCursorParams,
+  type GetDevicesParams,
+  type GraphQLConfig,
+  type UpdateDeviceParams,
+  type UpdateDeviceResponse,
 } from '../../types'
-import { getGraphQLClient } from '../../lib/graphqlClient'
 
 const createDevicesService = (config: GraphQLConfig): DevicesService => {
   const getDevice = async ({ id }: GetDeviceParams): Promise<Device> => {
@@ -33,7 +33,6 @@ const createDevicesService = (config: GraphQLConfig): DevicesService => {
           id
           name
           deviceId
-          macAddress
           createdAt
           updatedAt
         }
@@ -60,7 +59,6 @@ const createDevicesService = (config: GraphQLConfig): DevicesService => {
             id
             name
             deviceId
-            macAddress
             createdAt
             user {
               id
@@ -116,7 +114,6 @@ const createDevicesService = (config: GraphQLConfig): DevicesService => {
               id
               name
               deviceId
-              macAddress
               createdAt
               user {
                 id
