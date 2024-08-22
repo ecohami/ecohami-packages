@@ -9,6 +9,7 @@ export type Characteristic = {
   createdAt: string
   updatedAt: string
   service: Service
+  peripheralCount: number
 }
 
 export type CharacteristicConnection = {

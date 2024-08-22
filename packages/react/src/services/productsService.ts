@@ -54,6 +54,11 @@ const createProductsService = (config: GraphQLConfig) => {
             name
             manufacturer
             createdAt
+            characteristics {
+              id
+              name
+              peripheralCount
+            }
           }
           totalCount
         }

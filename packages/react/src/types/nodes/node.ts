@@ -1,5 +1,5 @@
 // Local
-import type { PageInfo, Service } from '..'
+import type { Characteristic, PageInfo } from '..'
 
 export type Node = {
   id: string
@@ -7,7 +7,7 @@ export type Node = {
   nodeId: string
   createdAt: string
   updatedAt: string
-  services: Service[]
+  characteristics: Characteristic[]
 }
 
 export type NodeConnection = {
