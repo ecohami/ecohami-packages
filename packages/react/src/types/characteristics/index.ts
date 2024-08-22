@@ -1,2 +1,2 @@
 export * from './characteristic'
-export * from './characteristicsApi'
+export * from './characteristicsService'

@@ -1,11 +1,10 @@
 // Local
-import { PageInfo, Service } from '..'
+import type { PageInfo, Service } from '..'
 
 export type Device = {
   id: string
   name: string
   deviceId: string
-  macAddress: string
   createdAt: string
   updatedAt: string
   services: Service[]

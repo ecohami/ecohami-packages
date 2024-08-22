@@ -8,6 +8,10 @@ export type Zone = {
   createdAt: string
   updatedAt: string
   service: Service
+  wifiSsid: string
+  wifiPassword: string
+  mqttUrl: string
+  mqttPort: number
 }
 
 export type ZoneConnection = {

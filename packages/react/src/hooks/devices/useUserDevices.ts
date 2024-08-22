@@ -1,14 +1,14 @@
 // External
 import { useQuery } from '@tanstack/react-query'
-import { ClientError } from 'graphql-request'
+import type { ClientError } from 'graphql-request'
 
 // Local
-import {
+import { useApiServices } from '../../contexts'
+import type {
   DeviceConnection,
   DevicesFilter,
   PaginationOffsetArgs,
 } from '../../types'
-import { useApiServices } from '../../contexts'
 
 type UseUserDevicesArgs = {
   pagination: PaginationOffsetArgs

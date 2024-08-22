@@ -1,17 +1,23 @@
 // External
 import { gql } from 'graphql-request'
 
+import { getGraphQLClient } from '../../lib/graphqlClient'
 // Local
-import {
+import type {
+  CreateUserDeviceParams,
+  CreateUserDeviceResponse,
+  DeleteUserDeviceParams,
+  DeleteUserDeviceResponse,
   Device,
   DeviceConnection,
   GetUserDeviceParams,
   GetUserDevicesParams,
   GraphQLConfig,
+  UpdateUserDeviceParams,
+  UpdateUserDeviceResponse,
   UserDeviceResponse,
   UserDevicesResponse,
 } from '../../types'
-import { getGraphQLClient } from '../../lib/graphqlClient'
 
 const createUserDevicesService = (config: GraphQLConfig) => {
   const getUserDevice = async ({
@@ -23,7 +29,6 @@ const createUserDevicesService = (config: GraphQLConfig) => {
           id
           name
           deviceId
-          macAddress
           createdAt
           updatedAt
           services {
@@ -61,7 +66,6 @@ const createUserDevicesService = (config: GraphQLConfig) => {
             id
             name
             deviceId
-            macAddress
             createdAt
             updatedAt
             services {
@@ -89,9 +93,84 @@ const createUserDevicesService = (config: GraphQLConfig) => {
     return data.userDevices
   }
 
+  const createUserDevice = async ({
+    input,
+  }: CreateUserDeviceParams): Promise<Device> => {
+    const query = gql`
+      mutation createDevice($input: CreateDeviceInput!) {
+        createDevice(input: $input) {
+          id
+          deviceId
+        }
+      }
+    `
+
+    const variables = {
+      input,
+    }
+
+    const graphQLClient = await getGraphQLClient(config)
+    const data: CreateUserDeviceResponse = await graphQLClient.request(
+      query,
+      variables,
+    )
+    return data.createDevice
+  }
+
+  const updateUserDevice = async ({
+    input,
+  }: UpdateUserDeviceParams): Promise<Device> => {
+    const query = gql`
+      mutation updateDevice($id: String!, $data: UpdateDeviceData!) {
+        updateDevice(id: $id, data: $data) {
+          id
+          deviceId
+        }
+      }
+    `
+
+    const variables = {
+      input,
+    }
+
+    const graphQLClient = await getGraphQLClient(config)
+    const data: UpdateUserDeviceResponse = await graphQLClient.request(
+      query,
+      variables,
+    )
+    return data.updateDevice
+  }
+
+  const deleteUserDevice = async ({
+    id,
+  }: DeleteUserDeviceParams): Promise<Device> => {
+    const query = gql`
+      mutation deleteDevice($id: String!) {
+        deleteDevice(id: $id) {
+          id
+          deviceId
+        }
+      }
+    `
+
+    const variables = {
+      id,
+    }
+
+    const graphQLClient = await getGraphQLClient(config)
+    const data: DeleteUserDeviceResponse = await graphQLClient.request(
+      query,
+      variables,
+    )
+    return data.deleteDevice
+  }
+
   return {
     getUserDevice,
     getUserDevices,
+    createUserDevice,
+    updateUserDevice,
+    deleteUserDevice,
   }
 }
 
