@@ -1,5 +1,5 @@
 export * from './characteristics'
-export * from './devices'
+export * from './nodes'
 export * from './products'
 export * from './services'
 export * from './users'

@@ -4,35 +4,35 @@ import { gql } from 'graphql-request'
 import { getGraphQLClient } from '../../lib/graphqlClient'
 // Local
 import {
-  type CreateDeviceParams,
-  type CreateDeviceResponse,
+  type CreateNodeParams,
+  type CreateNodeResponse,
   CursorDirection,
-  type DeleteDeviceParams,
-  type DeleteDeviceResponse,
-  type Device,
-  type DeviceConnection,
-  type DeviceCursorQuery,
-  type DeviceResponse,
-  type DevicesCursorConnection,
-  type DevicesCursorResponse,
-  type DevicesResponse,
-  type DevicesService,
-  type GetDeviceParams,
-  type GetDevicesCursorParams,
-  type GetDevicesParams,
+  type DeleteNodeParams,
+  type DeleteNodeResponse,
+  type Node,
+  type NodeConnection,
+  type NodeCursorQuery,
+  type NodeResponse,
+  type NodesCursorConnection,
+  type NodesCursorResponse,
+  type NodesResponse,
+  type NodesService,
+  type GetNodeParams,
+  type GetNodesCursorParams,
+  type GetNodesParams,
   type GraphQLConfig,
-  type UpdateDeviceParams,
-  type UpdateDeviceResponse,
+  type UpdateNodeParams,
+  type UpdateNodeResponse,
 } from '../../types'
 
-const createDevicesService = (config: GraphQLConfig): DevicesService => {
-  const getDevice = async ({ id }: GetDeviceParams): Promise<Device> => {
+const createNodesService = (config: GraphQLConfig): NodesService => {
+  const getNode = async ({ id }: GetNodeParams): Promise<Node> => {
     const query = gql`
-      query device($id: String!) {
-        device(id: $id) {
+      query node($id: String!) {
+        node(id: $id) {
           id
           name
-          deviceId
+          nodeId
           createdAt
           updatedAt
         }
@@ -44,21 +44,21 @@ const createDevicesService = (config: GraphQLConfig): DevicesService => {
     }
 
     const graphQLClient = await getGraphQLClient(config)
-    const data: DeviceResponse = await graphQLClient.request(query, variables)
-    return data.device
+    const data: NodeResponse = await graphQLClient.request(query, variables)
+    return data.node
   }
 
-  const getDevices = async ({
+  const getNodes = async ({
     pagination,
     filters,
-  }: GetDevicesParams): Promise<DeviceConnection> => {
+  }: GetNodesParams): Promise<NodeConnection> => {
     const query = gql`
-      query devices($skip: Int!, $take: Int!, $filters: DevicesFilterInput) {
-        devices(skip: $skip, take: $take, filters: $filters) {
-          devices {
+      query nodes($skip: Int!, $take: Int!, $filters: NodesFilterInput) {
+        nodes(skip: $skip, take: $take, filters: $filters) {
+          nodes {
             id
             name
-            deviceId
+            nodeId
             createdAt
             user {
               id
@@ -79,23 +79,23 @@ const createDevicesService = (config: GraphQLConfig): DevicesService => {
     }
 
     const graphQLClient = await getGraphQLClient(config)
-    const data: DevicesResponse = await graphQLClient.request(query, variables)
-    return data.devices
+    const data: NodesResponse = await graphQLClient.request(query, variables)
+    return data.nodes
   }
 
-  const getDevicesCursor = async ({
+  const getNodesCursor = async ({
     pagination,
     filters,
-  }: GetDevicesCursorParams): Promise<DevicesCursorConnection> => {
+  }: GetNodesCursorParams): Promise<NodesCursorConnection> => {
     const query = gql`
-      query devicesCursor(
+      query nodesCursor(
         $first: Int
         $after: String
         $last: Int
         $before: String
-        $filters: DevicesFilterInput
+        $filters: NodesFilterInput
       ) {
-        devicesCursor(
+        nodesCursor(
           first: $first
           after: $after
           last: $last
@@ -113,7 +113,7 @@ const createDevicesService = (config: GraphQLConfig): DevicesService => {
             node {
               id
               name
-              deviceId
+              nodeId
               createdAt
               user {
                 id
@@ -126,7 +126,7 @@ const createDevicesService = (config: GraphQLConfig): DevicesService => {
       }
     `
 
-    const variables: DeviceCursorQuery = {
+    const variables: NodeCursorQuery = {
       first: null,
       after: null,
       last: null,
@@ -144,19 +144,17 @@ const createDevicesService = (config: GraphQLConfig): DevicesService => {
     }
 
     const graphQLClient = await getGraphQLClient()
-    const data: DevicesCursorResponse = await graphQLClient.request(
+    const data: NodesCursorResponse = await graphQLClient.request(
       query,
       variables,
     )
-    return data.devicesCursor
+    return data.nodesCursor
   }
 
-  const createDevice = async ({
-    input,
-  }: CreateDeviceParams): Promise<Device> => {
+  const createNode = async ({ input }: CreateNodeParams): Promise<Node> => {
     const query = gql`
-      mutation createDevice($input: CreateDeviceInput!) {
-        createDevice(input: $input) {
+      mutation createNode($input: CreateNodeInput!) {
+        createNode(input: $input) {
           id
         }
       }
@@ -167,19 +165,17 @@ const createDevicesService = (config: GraphQLConfig): DevicesService => {
     }
 
     const graphQLClient = await getGraphQLClient(config)
-    const data: CreateDeviceResponse = await graphQLClient.request(
+    const data: CreateNodeResponse = await graphQLClient.request(
       query,
       variables,
     )
-    return data.createDevice
+    return data.createNode
   }
 
-  const updateDevice = async ({
-    input,
-  }: UpdateDeviceParams): Promise<Device> => {
+  const updateNode = async ({ input }: UpdateNodeParams): Promise<Node> => {
     const query = gql`
-      mutation updateDevice($id: String!, $data: UpdateDeviceData!) {
-        updateDevice(id: $id, data: $data) {
+      mutation updateNode($id: String!, $data: UpdateNodeData!) {
+        updateNode(id: $id, data: $data) {
           id
         }
       }
@@ -190,17 +186,17 @@ const createDevicesService = (config: GraphQLConfig): DevicesService => {
     }
 
     const graphQLClient = await getGraphQLClient(config)
-    const data: UpdateDeviceResponse = await graphQLClient.request(
+    const data: UpdateNodeResponse = await graphQLClient.request(
       query,
       variables,
     )
-    return data.updateDevice
+    return data.updateNode
   }
 
-  const deleteDevice = async ({ id }: DeleteDeviceParams): Promise<Device> => {
+  const deleteNode = async ({ id }: DeleteNodeParams): Promise<Node> => {
     const query = gql`
-      mutation deleteDevice($id: String!) {
-        deleteDevice(id: $id) {
+      mutation deleteNode($id: String!) {
+        deleteNode(id: $id) {
           id
         }
       }
@@ -211,21 +207,21 @@ const createDevicesService = (config: GraphQLConfig): DevicesService => {
     }
 
     const graphQLClient = await getGraphQLClient(config)
-    const data: DeleteDeviceResponse = await graphQLClient.request(
+    const data: DeleteNodeResponse = await graphQLClient.request(
       query,
       variables,
     )
-    return data.deleteDevice
+    return data.deleteNode
   }
 
   return {
-    getDevices,
-    getDevicesCursor,
-    getDevice,
-    createDevice,
-    updateDevice,
-    deleteDevice,
+    getNodes,
+    getNodesCursor,
+    getNode,
+    createNode,
+    updateNode,
+    deleteNode,
   }
 }
 
-export default createDevicesService
+export default createNodesService

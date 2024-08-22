@@ -4,10 +4,10 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import {
   createAuthService,
   createCharacteristicsService,
-  createDevicesService,
+  createNodesService,
   createProductsService,
   createServicesService,
-  createUserDevicesService,
+  createUserNodesService,
   createUsersService,
   createUserZonesService,
   createZonesService,
@@ -15,11 +15,11 @@ import {
 import {
   AuthService,
   CharacteristicsService,
-  DevicesService,
+  NodesService,
   GraphQLConfig,
   ProductsService,
   ServicesService,
-  UserDevicesService,
+  UserNodesService,
   UsersService,
   UserZonesService,
   ZonesService,
@@ -28,8 +28,8 @@ import { setGetTokenFunction } from '../lib/config'
 
 interface ApiServices {
   authService: AuthService
-  devicesService: DevicesService
-  userDevicesService: UserDevicesService
+  nodesService: NodesService
+  userNodesService: UserNodesService
   characteristicsService: CharacteristicsService
   productsService: ProductsService
   servicesService: ServicesService
@@ -55,8 +55,8 @@ export const ApiServicesProvider: React.FC<ServicesProviderProps> = ({
 }) => {
   const services = {
     authService: createAuthService(config),
-    devicesService: createDevicesService(config),
-    userDevicesService: createUserDevicesService(config),
+    nodesService: createNodesService(config),
+    userNodesService: createUserNodesService(config),
     characteristicsService: createCharacteristicsService(config),
     productsService: createProductsService(config),
     servicesService: createServicesService(config),

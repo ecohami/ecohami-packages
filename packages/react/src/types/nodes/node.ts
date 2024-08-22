@@ -1,26 +1,26 @@
 // Local
 import type { PageInfo, Service } from '..'
 
-export type Device = {
+export type Node = {
   id: string
   name: string
-  deviceId: string
+  nodeId: string
   createdAt: string
   updatedAt: string
   services: Service[]
 }
 
-export type DeviceConnection = {
-  devices: Device[]
+export type NodeConnection = {
+  nodes: Node[]
   totalCount: number
 }
 
-export type DeviceNode = {
-  node: Device
+export type NodeNode = {
+  node: Node
 }
 
-export type DevicesCursorConnection = {
-  edges: DeviceNode[]
+export type NodesCursorConnection = {
+  edges: NodeNode[]
   totalCount: number
   pageInfo: PageInfo
 }
