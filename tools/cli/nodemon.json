@@ -1,0 +1,10 @@
+{
+  "watch": [
+    "./src"
+  ],
+  "ext": "ts mjs js",
+  "ignore": [
+    "node_modules"
+  ],
+  "exec": "ts-node ./main.mjs"
+}

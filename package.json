@@ -1,6 +1,14 @@
 {
-  "private": true,
+  "name": "ecohami-packages",
+  "description": "",
+  "keywords": [],
+  "author": "Ecohami",
+  "license": "ISC",
   "workspaces": [
-    "packages/*"
-  ]
+    "packages/*",
+    "toos/*"
+  ],
+  "devDependencies": {
+    "typescript": ">=3.0.0"
+  }
 }

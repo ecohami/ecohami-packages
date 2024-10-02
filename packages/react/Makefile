@@ -2,9 +2,12 @@ SERVICE := Ecohami React Package
 VERSION := $(shell jq -r .version package.json)
 SHOW_DOCKER_HELP := false
 
-include .makefiles/help.mk
-
 default: help
+
+include ../../.makefiles/help.mk
+
+# CLI commands
+CLI_CMDS := dev
 
 # Development Commands
 
