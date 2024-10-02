@@ -24,11 +24,6 @@
     "./services": "./dist/services/index.js",
     "./types": "./dist/types/index.js"
   },
-  "prettier": {
-    "singleQuote": true,
-    "trailingComma": "all",
-    "semi": false
-  },
   "peerDependencies": {
     "@tanstack/react-query": "^5.39.0",
     "react": "^17.0.0",
