@@ -6,6 +6,9 @@ default: help
 include .makefiles/help.mk
 include .makefiles/node.mk
 
+# CLI commands
+CLI_CMDS := dev
+
 # Development Commands
 
 .PHONY: dev 
