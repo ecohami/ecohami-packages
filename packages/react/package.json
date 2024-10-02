@@ -15,7 +15,7 @@
     "lint": "eslint \"**/*.ts\" --fix"
   },
   "keywords": [],
-  "author": "phoax",
+  "author": "Ecohami",
   "license": "ISC",
   "exports": {
     "./components": "./dist/components/index.js",
@@ -23,11 +23,6 @@
     "./hooks": "./dist/hooks/index.js",
     "./services": "./dist/services/index.js",
     "./types": "./dist/types/index.js"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "trailingComma": "all",
-    "semi": false
   },
   "peerDependencies": {
     "@tanstack/react-query": "^5.39.0",

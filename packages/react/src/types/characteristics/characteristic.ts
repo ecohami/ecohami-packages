@@ -1,4 +1,4 @@
-// Local
+// Internal
 import { PageInfo, Service } from '../'
 
 export type Characteristic = {
@@ -9,6 +9,7 @@ export type Characteristic = {
   createdAt: string
   updatedAt: string
   service: Service
+  peripheralCount: number
 }
 
 export type CharacteristicConnection = {

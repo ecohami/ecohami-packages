@@ -1,4 +1,4 @@
-// Local
+// Internal
 import {
   PaginationOffsetArgs,
   Service,

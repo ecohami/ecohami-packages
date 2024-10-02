@@ -1,5 +1,5 @@
-// Local
-import { PageInfo, Service } from '..'
+// Internal
+import { Characteristic, PageInfo } from '..'
 
 export type Product = {
   id: string
@@ -7,7 +7,7 @@ export type Product = {
   manufacturer: string
   createdAt: string
   updatedAt: string
-  service: Service
+  characteristics: Characteristic[]
 }
 
 export type ProductConnection = {

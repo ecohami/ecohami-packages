@@ -3,7 +3,7 @@ import { useQuery, UseQueryResult } from '@tanstack/react-query'
 import { ClientError } from 'graphql-request'
 import { GraphQLError } from 'graphql'
 
-// Local
+// Internal
 import {
   CharacteristicConnection,
   CharacteristicsFilter,

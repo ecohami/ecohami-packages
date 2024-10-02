@@ -1,4 +1,4 @@
-// Local
+// Internal
 import { PaginationOffsetArgs } from '../pagination'
 import { Zone, ZoneConnection } from './zone'
 import { ZonesFilter } from './zonesService'

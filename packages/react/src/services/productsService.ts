@@ -1,7 +1,7 @@
 // External
 import { gql } from 'graphql-request'
 
-// Local
+// Internal
 import {
   CreateProductParams,
   CreateProductResponse,
@@ -54,6 +54,11 @@ const createProductsService = (config: GraphQLConfig) => {
             name
             manufacturer
             createdAt
+            characteristics {
+              id
+              name
+              peripheralCount
+            }
           }
           totalCount
         }

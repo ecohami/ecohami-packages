@@ -3,7 +3,7 @@ import React from 'react'
 import ReactPaginate from 'react-paginate'
 import { useTranslation } from 'react-i18next'
 
-// Local
+// Internal
 import { PaginationInfo } from './PaginationInfo'
 import { PaginationOffsetArgs } from '../../../..//types'
 

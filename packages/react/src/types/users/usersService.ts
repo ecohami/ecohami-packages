@@ -1,4 +1,4 @@
-// Local
+// Internal
 import { PaginationOffsetArgs, User, UserConnection } from '..'
 
 export interface UsersService {
