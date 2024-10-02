@@ -9,6 +9,11 @@ import shell from "shelljs";
 
 // Internal
 import { getStatus } from "./utils/network.mjs";
+// import packageJSON from '../package.json' assert { type: 'json' };
+
+import { createRequire } from "module";
+import { formatName } from "./utils/format.mjs";
+const packageJSON = createRequire(import.meta.url)("../package.json");
 
 /**
  * Get the maximum length of the service names.
@@ -159,6 +164,8 @@ function executeCommand(command, servicePath) {
  * @param {Array} services - The list of services to display and manage.
  */
 async function load(services) {
+	console.log(chalk.blue(`${formatName(packageJSON.name)} v${packageJSON.version}`)); 
+
 	const selectedService = await promptServiceSelection(services);
 	const { name, command, path, status } = selectedService;
 

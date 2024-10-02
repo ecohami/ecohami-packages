@@ -3,8 +3,8 @@ VERSION := v$(shell node -p "require('./package.json').version")
 
 default: help
 
-include .makefiles/help.mk
-include .makefiles/node.mk
+include ../../.makefiles/help.mk
+include ../../.makefiles/node.mk
 
 # CLI commands
 CLI_CMDS := dev
