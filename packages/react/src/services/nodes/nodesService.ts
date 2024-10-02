@@ -2,7 +2,7 @@
 import { gql } from 'graphql-request'
 
 import { getGraphQLClient } from '../../lib/graphqlClient'
-// Local
+// Internal
 import {
   type CreateNodeParams,
   type CreateNodeResponse,

@@ -1,7 +1,7 @@
 // External
 import { gql } from 'graphql-request'
 
-// Local
+// Internal
 import {
   CreateServiceParams,
   CreateServiceResponse,

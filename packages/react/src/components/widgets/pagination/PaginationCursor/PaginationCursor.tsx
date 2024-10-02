@@ -3,7 +3,7 @@ import React from 'react'
 import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md'
 import { useTranslation } from 'react-i18next'
 
-// Local
+// Internal
 import { PageInfo, PaginationCursorArgs } from '../../../../types'
 
 export type PaginationTakeOption = 5 | 10 | 25 | 50 | 100

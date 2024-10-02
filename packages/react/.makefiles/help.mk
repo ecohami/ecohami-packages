@@ -7,7 +7,7 @@ endif
 
 .PHONY: help
 help: ## Show this help.
-	@echo $(SERVICE)
+	@echo $(SERVICE) $(VERSION)
 	@$(LINE_BREAK)
 	@echo Usage: make [command]
 	@$(LINE_BREAK)
@@ -20,11 +20,3 @@ help: ## Show this help.
 		} \
 	}' $(MAKEFILE_LIST)
 	@$(LINE_BREAK)
-ifeq ($(SHOW_DOCKER_HELP), true)
-	@awk 'BEGIN { \
-        print "Docker options:"; \
-        print "  & \t Run containers in the background."; \
-        print "\t Example: make dev-docker &"; \
-    }'
-	@$(LINE_BREAK)
-endif

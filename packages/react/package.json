@@ -15,7 +15,7 @@
     "lint": "eslint \"**/*.ts\" --fix"
   },
   "keywords": [],
-  "author": "phoax",
+  "author": "Ecohami",
   "license": "ISC",
   "exports": {
     "./components": "./dist/components/index.js",

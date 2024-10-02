@@ -1,4 +1,4 @@
-// Local
+// Internal
 import type { PaginationOffsetArgs } from '../pagination'
 import type { Node, NodeConnection } from './node'
 import type { NodesFilter } from './nodesService'

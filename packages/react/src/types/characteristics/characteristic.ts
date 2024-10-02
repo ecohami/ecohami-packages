@@ -1,4 +1,4 @@
-// Local
+// Internal
 import { PageInfo, Service } from '../'
 
 export type Characteristic = {

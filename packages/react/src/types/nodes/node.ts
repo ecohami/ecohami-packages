@@ -1,4 +1,4 @@
-// Local
+// Internal
 import type { Characteristic, PageInfo } from '..'
 
 export type Node = {

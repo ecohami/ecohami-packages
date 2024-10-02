@@ -2,7 +2,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { ClientError } from 'graphql-request'
 
-// Local
+// Internal
 import { NodeConnection, NodesFilter, PaginationOffsetArgs } from '../../types'
 import { useApiServices } from '../../contexts'
 

@@ -10,6 +10,9 @@ importers:
 
   packages/react:
     dependencies:
+      '@ecohami/react':
+        specifier: ^0.1.0
+        version: 0.1.0(@tanstack/react-query@5.51.23(react@17.0.2))(i18next@23.11.5)(next@14.2.5(@babel/core@7.24.8)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(postcss@8.4.39)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       '@tanstack/react-query':
         specifier: ^5.39.0
         version: 5.51.23(react@17.0.2)
@@ -794,6 +797,13 @@ packages:
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [win32]
+
+  '@ecohami/react@0.1.0':
+    resolution: {integrity: sha512-Ag/4Y/wEM3MV9EHA0uynBrYw6PBBAxDtEPdqopsW1l+h3aQwKhe5OEslnXlUt0RDRM+4hy0nsksvYcz0UPxc2w==}
+    peerDependencies:
+      '@tanstack/react-query': ^5.39.0
+      react: ^17.0.0
+      react-dom: ^17.0.0
 
   '@esbuild/aix-ppc64@0.21.5':
     resolution: {integrity: sha512-1SDgH6ZSPTlggy1yI6+Dbkiz8xzpHJEVAlF/AM1tHPLsf5STom9rwtjE4hKAF20FfXXNTFqEYXyJNWh1GiZedQ==}
@@ -5137,6 +5147,30 @@ snapshots:
   '@biomejs/cli-win32-x64@1.8.3':
     optional: true
 
+  '@ecohami/react@0.1.0(@tanstack/react-query@5.51.23(react@17.0.2))(i18next@23.11.5)(next@14.2.5(@babel/core@7.24.8)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(postcss@8.4.39)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
+    dependencies:
+      '@tanstack/react-query': 5.51.23(react@17.0.2)
+      classnames: 2.5.1
+      daisyui: 4.12.10(postcss@8.4.39)
+      graphql: 16.9.0
+      graphql-request: 6.1.0(graphql@16.9.0)
+      next-auth: 4.24.7(next@14.2.5(@babel/core@7.24.8)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      react: 17.0.2
+      react-dom: 17.0.2(react@17.0.2)
+      react-i18next: 14.1.2(i18next@23.11.5)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      react-icons: 5.2.1(react@17.0.2)
+      react-paginate: 8.2.0(react@17.0.2)
+      tailwindcss: 3.4.4
+      uuid: 9.0.1
+    transitivePeerDependencies:
+      - encoding
+      - i18next
+      - next
+      - nodemailer
+      - postcss
+      - react-native
+      - ts-node
+
   '@esbuild/aix-ppc64@0.21.5':
     optional: true
 
@@ -5383,13 +5417,15 @@ snapshots:
     transitivePeerDependencies:
       - '@parcel/core'
 
-  '@parcel/cache@2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.11))':
+  '@parcel/cache@2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.11))(@swc/helpers@0.5.11)':
     dependencies:
       '@parcel/core': 2.12.0(@swc/helpers@0.5.11)
       '@parcel/fs': 2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.11))(@swc/helpers@0.5.11)
       '@parcel/logger': 2.12.0
       '@parcel/utils': 2.12.0
       lmdb: 2.8.5
+    transitivePeerDependencies:
+      - '@swc/helpers'
 
   '@parcel/codeframe@2.12.0':
     dependencies:
@@ -5449,7 +5485,7 @@ snapshots:
   '@parcel/core@2.12.0(@swc/helpers@0.5.11)':
     dependencies:
       '@mischnic/json-sourcemap': 0.1.1
-      '@parcel/cache': 2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.11))
+      '@parcel/cache': 2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.11))(@swc/helpers@0.5.11)
       '@parcel/diagnostic': 2.12.0
       '@parcel/events': 2.12.0
       '@parcel/fs': 2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.11))(@swc/helpers@0.5.11)
@@ -5864,7 +5900,7 @@ snapshots:
 
   '@parcel/types@2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.11))(@swc/helpers@0.5.11)':
     dependencies:
-      '@parcel/cache': 2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.11))
+      '@parcel/cache': 2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.11))(@swc/helpers@0.5.11)
       '@parcel/diagnostic': 2.12.0
       '@parcel/fs': 2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.11))(@swc/helpers@0.5.11)
       '@parcel/package-manager': 2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.11))(@swc/helpers@0.5.11)

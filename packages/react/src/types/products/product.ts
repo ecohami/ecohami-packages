@@ -1,4 +1,4 @@
-// Local
+// Internal
 import { Characteristic, PageInfo } from '..'
 
 export type Product = {
