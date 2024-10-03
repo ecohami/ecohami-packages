@@ -19,7 +19,7 @@ check_package() {
   else
     echo "${RED}${PACKAGE_FOLDER} has changed${NC}"
     cd "$DIR/$PACKAGE_FOLDER"
-    npm run lint
+    pnpm run lint
   fi
 }
 
