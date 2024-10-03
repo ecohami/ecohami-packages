@@ -6,9 +6,10 @@
   "license": "ISC",
   "workspaces": [
     "packages/*",
-    "toos/*"
+    "tools/*"
   ],
   "devDependencies": {
+    "husky": "^9.1.6",
     "typescript": ">=3.0.0"
   }
 }
