@@ -15,3 +15,6 @@ CLI_CMDS := dev
 dev: node ## Starts the service development mode.
 	pnpm run watch
 	
+.PHONY: link
+link: ## Link the package to the ecohami-react package.
+	pnpm link --global
