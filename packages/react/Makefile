@@ -3,8 +3,8 @@ VERSION := v$(shell node -p "require('./package.json').version")
 
 default: help
 
-include .makefiles/help.mk
-include .makefiles/node.mk
+include ../../.makefiles/help.mk
+include ../../.makefiles/node.mk
 
 # CLI commands
 CLI_CMDS := dev
@@ -15,3 +15,6 @@ CLI_CMDS := dev
 dev: node ## Starts the service development mode.
 	pnpm run watch
 	
+.PHONY: link
+link: ## Link the package to the ecohami-react package.
+	pnpm link --global

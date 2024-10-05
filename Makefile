@@ -8,4 +8,4 @@ include .makefiles/help.mk
 
 .PHONY: dev
 dev:
-	pnpm --prefix ./tools/cli start
+	cd ./tools/cli && pnpm start
