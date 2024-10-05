@@ -1,6 +1,6 @@
 {
   "name": "@ecohami/react",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -30,7 +30,6 @@
     "react-dom": "^17.0.0"
   },
   "dependencies": {
-    "@ecohami/react": "^0.1.0",
     "classnames": "^2.5.1",
     "daisyui": "^4.12.12",
     "graphql": "^16.9.0",
