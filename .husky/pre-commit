@@ -1,0 +1,2 @@
+sh ./scripts/prevent-main-commit.sh
+

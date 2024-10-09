@@ -1,0 +1,3 @@
+[submodule "tools"]
+	path = tools
+	url = notrapha:ecohami/ecohami-tools.git

@@ -2,7 +2,8 @@ SERVICE := Ecohami Packages
 
 default: help
 
-include .makefiles/help.mk
+include ./tools/.makefiles/help.mk
+include ./tools/.makefiles/tools.mk
 
 # Development Commands
 

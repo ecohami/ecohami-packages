@@ -1,1 +1,1 @@
-./scripts/pre-push.sh
+sh ./scripts/lint-if-changed.sh

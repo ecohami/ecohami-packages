@@ -1,6 +1,7 @@
 // External
 import { gql } from 'graphql-request'
 
+import { getGraphQLClient } from '../../lib/graphqlClient'
 // Internal
 import {
   CreateUserZoneParams,
@@ -17,7 +18,6 @@ import {
   Zone,
   ZoneConnection,
 } from '../../types'
-import { getGraphQLClient } from '../../lib/graphqlClient'
 
 const createUserZonesService = (config: GraphQLConfig) => {
   const getUserZone = async ({ id }: GetUserZoneParams): Promise<Zone> => {
@@ -99,7 +99,7 @@ const createUserZonesService = (config: GraphQLConfig) => {
       query,
       variables,
     )
-    return data.createZone
+    return data.createUserZone
   }
 
   const updateUserZone = async ({
@@ -122,7 +122,7 @@ const createUserZonesService = (config: GraphQLConfig) => {
       query,
       variables,
     )
-    return data.updateZone
+    return data.updateUserZone
   }
 
   const deleteUserZone = async ({
