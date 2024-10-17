@@ -33,6 +33,7 @@ const createUserZonesService = (config: GraphQLConfig) => {
           wifiPassword
           mqttUrl
           mqttPort
+          status
         }
       }
     `
@@ -58,6 +59,7 @@ const createUserZonesService = (config: GraphQLConfig) => {
             name
             location
             createdAt
+            status
           }
           totalCount
         }

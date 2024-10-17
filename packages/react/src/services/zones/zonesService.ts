@@ -1,6 +1,7 @@
 // External
 import { gql } from 'graphql-request'
 
+import { getGraphQLClient } from '../../lib/graphqlClient'
 // Internal
 import {
   CreateZoneParams,
@@ -22,7 +23,6 @@ import {
   ZonesCursorResponse,
   ZonesResponse,
 } from '../../types'
-import { getGraphQLClient } from '../../lib/graphqlClient'
 
 const createZonesService = (config: GraphQLConfig) => {
   const getZone = async ({ id }: GetZoneParams): Promise<Zone> => {
@@ -32,7 +32,7 @@ const createZonesService = (config: GraphQLConfig) => {
           id
           name
           location
-          active
+          status
           createdAt
           updatedAt
         }
@@ -59,7 +59,7 @@ const createZonesService = (config: GraphQLConfig) => {
             id
             name
             location
-            active
+            status
             createdAt
             user {
               id
@@ -116,6 +116,7 @@ const createZonesService = (config: GraphQLConfig) => {
               name
               location
               createdAt
+              status
               user {
                 id
                 email

@@ -13,7 +13,7 @@ export const PaginationInfo: React.FC<PaginationInfoProps> = ({
   take = 0,
   total = 0,
 }) => {
-  const { t } = useTranslation('widgets')
+  const { t } = useTranslation()
 
   const from = total ? (page - 1) * take + 1 : 0
   const to = from + take > total ? total : (page - 1) * take + take
