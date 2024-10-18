@@ -1,0 +1,5 @@
+node ./scripts/generate-changesets.js
+
+echo "Creating a follow-up commit for changeset files"
+git add .changeset/**.md
+git commit -m "chore: add changeset files"

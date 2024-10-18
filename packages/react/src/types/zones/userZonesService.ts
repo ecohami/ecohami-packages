@@ -6,6 +6,9 @@ import { ZonesFilter } from './zonesService'
 export interface UserZonesService {
   getUserZone(params: GetUserZoneParams): Promise<Zone>
   getUserZones(params: GetUserZonesParams): Promise<ZoneConnection>
+  createUserZone(params: CreateUserZoneParams): Promise<Zone>
+  updateUserZone(params: UpdateUserZoneParams): Promise<Zone>
+  deleteUserZone(params: DeleteUserZoneParams): Promise<Zone>
 }
 
 // One
@@ -71,7 +74,7 @@ export type CreateUserZoneInput = {
 // Response
 
 export type CreateUserZoneResponse = {
-  createZone: Zone
+  createUserZone: Zone
 }
 
 // Update
@@ -107,7 +110,7 @@ export type UpdateUserZoneInput = {
 // Response
 
 export type UpdateUserZoneResponse = {
-  updateZone: Zone
+  updateUserZone: Zone
 }
 
 // Delete

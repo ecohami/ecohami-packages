@@ -2,6 +2,7 @@
 import { gql } from 'graphql-request'
 
 // Internal
+import { getGraphQLClient } from '../../lib/graphqlClient'
 import {
   CreateUserZoneParams,
   CreateUserZoneResponse,
@@ -17,9 +18,8 @@ import {
   Zone,
   ZoneConnection,
 } from '../../types'
-import { getGraphQLClient } from '../../lib/graphqlClient'
 
-const createUserZonesService = (config: GraphQLConfig) => {
+export const createUserZonesService = (config: GraphQLConfig) => {
   const getUserZone = async ({ id }: GetUserZoneParams): Promise<Zone> => {
     const query = gql`
       query userZone($id: String!) {
@@ -33,6 +33,7 @@ const createUserZonesService = (config: GraphQLConfig) => {
           wifiPassword
           mqttUrl
           mqttPort
+          status
         }
       }
     `
@@ -58,6 +59,7 @@ const createUserZonesService = (config: GraphQLConfig) => {
             name
             location
             createdAt
+            status
           }
           totalCount
         }
@@ -99,7 +101,7 @@ const createUserZonesService = (config: GraphQLConfig) => {
       query,
       variables,
     )
-    return data.createZone
+    return data.createUserZone
   }
 
   const updateUserZone = async ({
@@ -122,7 +124,7 @@ const createUserZonesService = (config: GraphQLConfig) => {
       query,
       variables,
     )
-    return data.updateZone
+    return data.updateUserZone
   }
 
   const deleteUserZone = async ({
@@ -156,5 +158,3 @@ const createUserZonesService = (config: GraphQLConfig) => {
     deleteUserZone,
   }
 }
-
-export default createUserZonesService

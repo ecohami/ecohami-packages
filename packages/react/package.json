@@ -1,9 +1,12 @@
 {
   "name": "@ecohami/react",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "description": "",
   "source": "src/index.ts",
   "main": "dist/index.js",
+  "keywords": [],
+  "author": "Ecohami",
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ecohami/ecohami-packages.git"
@@ -12,11 +15,9 @@
     "build": "tsc",
     "watch": "tsc --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint \"**/*.ts\" --fix"
+    "lint": "biome lint",
+    "check": "biome check"
   },
-  "keywords": [],
-  "author": "Ecohami",
-  "license": "ISC",
   "exports": {
     "./components": "./dist/components/index.js",
     "./contexts": "./dist/contexts/index.js",
@@ -30,9 +31,8 @@
     "react-dom": "^17.0.0"
   },
   "dependencies": {
-    "@ecohami/react": "^0.1.0",
     "classnames": "^2.5.1",
-    "daisyui": "^4.12.12",
+    "daisyui": "^4.12.13",
     "graphql": "^16.9.0",
     "graphql-request": "^6.1.0",
     "next-auth": "^4.24.8",
@@ -43,17 +43,9 @@
     "uuid": "^10.0.0"
   },
   "devDependencies": {
-    "@eslint/compat": "^1.2.0",
-    "@eslint/js": "^9.12.0",
-    "@storybook/addon-actions": "^8.3.5",
-    "@storybook/addon-essentials": "^8.3.5",
-    "@storybook/addon-links": "^8.3.5",
-    "@storybook/react": "^8.3.5",
     "@types/react": "^18.3.11",
-    "@types/react-dom": "^18.3.0",
-    "eslint": "~9.12.0",
-    "eslint-plugin-react": "^7.37.1",
-    "globals": "^15.10.0",
+    "@types/react-dom": "^18.3.1",
+    "globals": "^15.11.0",
     "parcel": "^2.12.0",
     "storybook": "^8.3.5"
   }

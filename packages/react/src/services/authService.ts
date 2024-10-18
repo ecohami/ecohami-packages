@@ -2,7 +2,8 @@
 import { gql } from 'graphql-request'
 import { signOut } from 'next-auth/react'
 
-// Alias
+// Internal
+import { getGraphQLClient } from '../lib/graphqlClient'
 import {
   AuthService,
   GraphQLConfig,
@@ -10,9 +11,8 @@ import {
   RefreshTokenResponse,
   Token,
 } from '../types'
-import { getGraphQLClient } from '../lib/graphqlClient'
 
-const createAuthService = (config: GraphQLConfig): AuthService => {
+export const createAuthService = (config: GraphQLConfig): AuthService => {
   const refreshToken = async ({
     refreshToken,
   }: RefreshTokenParams): Promise<Token> => {
@@ -61,5 +61,3 @@ const createAuthService = (config: GraphQLConfig): AuthService => {
     federatedLogout,
   }
 }
-
-export default createAuthService

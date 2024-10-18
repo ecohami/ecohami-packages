@@ -2,10 +2,10 @@
 
 ## Publish
 
-1. Set your GitHub token:
+1. Set your npmjs token:
 
 ```bash
-export GITHUB_TOKEN=JustChangeMe
+echo "//registry.npmjs.org/:_authToken=<YOUR_NPM_TOKEN>" >> ../../.npmrc
 ```
 
 2. Publish the package:

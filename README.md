@@ -1,6 +1,6 @@
 # Ecohami Packages
 
-Ecohami Packages is a collection of reusable modules and libraries for building and integrating with the Ecohami platform.
+Ecohami Packages is a collection of reusable modules and libraries for building and integrating with the Ecohami.
 
 ## Components
 

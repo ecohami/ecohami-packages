@@ -2,6 +2,7 @@
 import { gql } from 'graphql-request'
 
 // Internal
+import { getGraphQLClient } from '../lib/graphqlClient'
 import {
   DeleteUserParams,
   DeleteUserResponse,
@@ -15,9 +16,8 @@ import {
   UserResponse,
   UsersResponse,
 } from '../types'
-import { getGraphQLClient } from '../lib/graphqlClient'
 
-const createUsersService = (config: GraphQLConfig) => {
+export const createUsersService = (config: GraphQLConfig) => {
   const getUser = async ({ id }: GetUserParams): Promise<User> => {
     const query = gql`
       query user($id: String!) {
@@ -121,5 +121,3 @@ const createUsersService = (config: GraphQLConfig) => {
     deleteUser,
   }
 }
-
-export default createUsersService

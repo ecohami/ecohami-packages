@@ -1,11 +1,11 @@
 // External
 import React from 'react'
-import ReactPaginate from 'react-paginate'
 import { useTranslation } from 'react-i18next'
+import ReactPaginate from 'react-paginate'
 
 // Internal
-import { PaginationInfo } from './PaginationInfo'
 import { PaginationOffsetArgs } from '../../../..//types'
+import { PaginationInfo } from './PaginationInfo'
 
 export type PaginationTakeOption = 5 | 10 | 25 | 50 | 100
 export const PAGINATION_OPTIONS: PaginationTakeOption[] = [5, 10, 25, 50, 100]
@@ -41,13 +41,13 @@ export const PaginationOffset: React.FC<PaginationProps> = ({
   }
 
   const handleChangeItems = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const take = parseInt(event.target.value)
+    const take = Number.parseInt(event.target.value)
 
     if (typeof window !== 'undefined' && rewriteUrl) {
       const url = new URL(window.location.href)
       url.searchParams.set('take', take.toString())
       window.history.replaceState({}, '', url.toString())
-      setItemsPerPage && setItemsPerPage(take)
+      setItemsPerPage?.(take)
     }
   }
 
@@ -90,7 +90,6 @@ export const PaginationOffset: React.FC<PaginationProps> = ({
           ))}
         </select>
       </div>
-      <div></div>
     </div>
   )
 }

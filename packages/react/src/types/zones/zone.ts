@@ -1,17 +1,24 @@
 // Internal
 import { PageInfo, Service } from '..'
 
+export enum ZoneStatus {
+  ACTIVE = 'ACTIVE',
+  INACTIVE = 'INACTIVE',
+  MAINTENANCE = 'MAINTENANCE',
+}
+
 export type Zone = {
   id: string
   name: string
   location: string
   createdAt: string
   updatedAt: string
-  service: Service
   wifiSsid: string
   wifiPassword: string
   mqttUrl: string
   mqttPort: number
+  status: ZoneStatus
+  service: Service
 }
 
 export type ZoneConnection = {
