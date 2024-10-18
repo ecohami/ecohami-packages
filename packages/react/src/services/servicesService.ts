@@ -2,6 +2,7 @@
 import { gql } from 'graphql-request'
 
 // Internal
+import { getGraphQLClient } from '../lib/graphqlClient'
 import {
   CreateServiceParams,
   CreateServiceResponse,
@@ -17,9 +18,8 @@ import {
   UpdateServiceParams,
   UpdateServiceResponse,
 } from '../types'
-import { getGraphQLClient } from '../lib/graphqlClient'
 
-const createServicesService = (config: GraphQLConfig) => {
+export const createServicesService = (config: GraphQLConfig) => {
   const getService = async ({ id }: GetServiceParams): Promise<Service> => {
     const query = gql`
       query service($id: String!) {
@@ -164,5 +164,3 @@ const createServicesService = (config: GraphQLConfig) => {
     deleteService,
   }
 }
-
-export default createServicesService

@@ -12,7 +12,7 @@ import {
   Token,
 } from '../types'
 
-const createAuthService = (config: GraphQLConfig): AuthService => {
+export const createAuthService = (config: GraphQLConfig): AuthService => {
   const refreshToken = async ({
     refreshToken,
   }: RefreshTokenParams): Promise<Token> => {
@@ -61,5 +61,3 @@ const createAuthService = (config: GraphQLConfig): AuthService => {
     federatedLogout,
   }
 }
-
-export default createAuthService

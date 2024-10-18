@@ -2,6 +2,7 @@
 import { gql } from 'graphql-request'
 
 // Internal
+import { getGraphQLClient } from '../lib/graphqlClient'
 import {
   CreateProductParams,
   CreateProductResponse,
@@ -17,9 +18,8 @@ import {
   UpdateProductParams,
   UpdateProductResponse,
 } from '../types'
-import { getGraphQLClient } from '../lib/graphqlClient'
 
-const createProductsService = (config: GraphQLConfig) => {
+export const createProductsService = (config: GraphQLConfig) => {
   const getProduct = async ({ id }: GetProductParams): Promise<Product> => {
     const query = gql`
       query product($id: String!) {
@@ -154,5 +154,3 @@ const createProductsService = (config: GraphQLConfig) => {
     deleteProduct,
   }
 }
-
-export default createProductsService

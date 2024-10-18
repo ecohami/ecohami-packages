@@ -2,6 +2,7 @@
 import { gql } from 'graphql-request'
 
 // Internal
+import { getGraphQLClient } from '../lib/graphqlClient'
 import {
   Characteristic,
   CharacteristicConnection,
@@ -18,9 +19,8 @@ import {
   UpdateCharacteristicParams,
   UpdateCharacteristicResponse,
 } from '../types'
-import { getGraphQLClient } from '../lib/graphqlClient'
 
-const createCharacteristicsService = (
+export const createCharacteristicsService = (
   config: GraphQLConfig,
 ): CharacteristicsService => {
   const getCharacteristic = async ({
@@ -174,5 +174,3 @@ const createCharacteristicsService = (
     deleteCharacteristic,
   }
 }
-
-export default createCharacteristicsService

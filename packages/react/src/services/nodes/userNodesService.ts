@@ -1,25 +1,25 @@
 // External
 import { gql } from 'graphql-request'
 
-import { getGraphQLClient } from '../../lib/graphqlClient'
 // Internal
+import { getGraphQLClient } from '../../lib/graphqlClient'
 import type {
   CreateUserNodeParams,
   CreateUserNodeResponse,
   DeleteUserNodeParams,
   DeleteUserNodeResponse,
-  Node,
-  NodeConnection,
   GetUserNodeParams,
   GetUserNodesParams,
   GraphQLConfig,
+  Node,
+  NodeConnection,
   UpdateUserNodeParams,
   UpdateUserNodeResponse,
   UserNodeResponse,
   UserNodesResponse,
 } from '../../types'
 
-const createUserNodesService = (config: GraphQLConfig) => {
+export const createUserNodesService = (config: GraphQLConfig) => {
   const getUserNode = async ({ id }: GetUserNodeParams): Promise<Node> => {
     const query = gql`
       query userNode($id: String!) {
@@ -164,5 +164,3 @@ const createUserNodesService = (config: GraphQLConfig) => {
     deleteUserNode,
   }
 }
-
-export default createUserNodesService

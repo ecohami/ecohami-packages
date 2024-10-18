@@ -1,14 +1,18 @@
 // External
 import { gql } from 'graphql-request'
 
-import { getGraphQLClient } from '../../lib/graphqlClient'
 // Internal
+import { getGraphQLClient } from '../../lib/graphqlClient'
 import {
   type CreateNodeParams,
   type CreateNodeResponse,
   CursorDirection,
   type DeleteNodeParams,
   type DeleteNodeResponse,
+  type GetNodeParams,
+  type GetNodesCursorParams,
+  type GetNodesParams,
+  type GraphQLConfig,
   type Node,
   type NodeConnection,
   type NodeCursorQuery,
@@ -17,15 +21,11 @@ import {
   type NodesCursorResponse,
   type NodesResponse,
   type NodesService,
-  type GetNodeParams,
-  type GetNodesCursorParams,
-  type GetNodesParams,
-  type GraphQLConfig,
   type UpdateNodeParams,
   type UpdateNodeResponse,
 } from '../../types'
 
-const createNodesService = (config: GraphQLConfig): NodesService => {
+export const createNodesService = (config: GraphQLConfig): NodesService => {
   const getNode = async ({ id }: GetNodeParams): Promise<Node> => {
     const query = gql`
       query node($id: String!) {
@@ -223,5 +223,3 @@ const createNodesService = (config: GraphQLConfig): NodesService => {
     deleteNode,
   }
 }
-
-export default createNodesService

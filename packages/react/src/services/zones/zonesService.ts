@@ -24,7 +24,7 @@ import {
   ZonesResponse,
 } from '../../types'
 
-const createZonesService = (config: GraphQLConfig) => {
+export const createZonesService = (config: GraphQLConfig) => {
   const getZone = async ({ id }: GetZoneParams): Promise<Zone> => {
     const query = gql`
       query zone($id: String!) {
@@ -225,5 +225,3 @@ const createZonesService = (config: GraphQLConfig) => {
     deleteZone,
   }
 }
-
-export default createZonesService

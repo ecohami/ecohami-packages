@@ -1,7 +1,7 @@
 // External
 import React from 'react'
-import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md'
 import { useTranslation } from 'react-i18next'
+import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md'
 
 // Internal
 import { PageInfo, PaginationCursorArgs } from '../../../../types'
@@ -29,7 +29,7 @@ export const PaginationCursor: React.FC<PaginationCursorProps> = ({
   const { t } = useTranslation()
 
   const handleChangeItems = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const take = parseInt(event.target.value)
+    const take = Number.parseInt(event.target.value)
 
     if (typeof window !== 'undefined' && rewriteUrl) {
       const url = new URL(window.location.href)
@@ -45,6 +45,7 @@ export const PaginationCursor: React.FC<PaginationCursorProps> = ({
       </div>
       <div className="join grid grid-cols-2">
         <button
+          type="button"
           className="btn btn-outline w-36 join-item"
           onClick={handlePrevious}
           disabled={!pageInfo.hasPreviousPage}
@@ -53,6 +54,7 @@ export const PaginationCursor: React.FC<PaginationCursorProps> = ({
           <span>{t('pagination.previous')}</span>
         </button>
         <button
+          type="button"
           className="btn btn-outline w-36 join-item"
           onClick={handleNext}
           disabled={!pageInfo.hasNextPage}
