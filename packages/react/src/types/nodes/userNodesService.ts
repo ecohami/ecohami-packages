@@ -58,7 +58,7 @@ export interface CreateUserNodeParams {
 export type CreateUserNodeInput = {
   name: string
   nodeId: string
-  serviceIds: string[]
+  characteristicIds: string[]
 }
 
 // Response

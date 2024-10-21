@@ -29,7 +29,7 @@ export const createUserNodesService = (config: GraphQLConfig) => {
           nodeId
           createdAt
           updatedAt
-          services {
+          characteristics {
             id
             name
           }
@@ -59,7 +59,7 @@ export const createUserNodesService = (config: GraphQLConfig) => {
             nodeId
             createdAt
             updatedAt
-            services {
+            characteristics {
               id
               name
             }
@@ -87,9 +87,10 @@ export const createUserNodesService = (config: GraphQLConfig) => {
   const createUserNode = async ({
     input,
   }: CreateUserNodeParams): Promise<Node> => {
+    console.log('input XOXO===>', input)
     const query = gql`
-      mutation createNode($input: CreateNodeInput!) {
-        createNode(input: $input) {
+      mutation createUserNode($input: CreateUserNodeInput!) {
+        createUserNode(input: $input) {
           id
           nodeId
         }
